@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-body {
+
 ul { /*所有无序列表的样式*/
 list-style-type: none;
 margin: 0;
@@ -10,7 +10,7 @@ padding: 0;
 }
 
 li.lefttop { /*左上角列表位置*/
-display: inline;
+float:left;
 
 }
 
@@ -20,31 +20,117 @@ color: black;
 text-align: center;
 padding: 8px;
 text-decoration: none;
+font-size:0.5em;
 }
 
+li.bottom{
+display: inline;
+text-align: center;
+}
+/*页脚链接样式*/
+li.bottom a, .bt{
+color:grey;
+display: inline;
+/*text-align: center;*/
+text-decoration: none;
+}
+
+/*设置下拉菜单*/
+li a, .dropbtn {
+  display: inline-block;
+  color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover, .dropdown:hover .dropbtn {
+color: blue;
+}
+li.dropdown{
+display:inline-block;
+}
+.dropdown-content{
+display: none;
+position: absolute;
+}
+.dropdown-content a {
+color: black;
+padding: 6px;
+margin:10px;
+text-decoration:none;
+display:block;
+text-align:center;
+
+}
+/*.dropdown-content a:hover{background-color:#f1f1f1;}*/
+.dropdown:hover .dropdown-content{
+display:block;
+background-color:white;
+border-radius: 6px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2),-2px -2px 2px rgba(0, 0, 0, 0.2),-2px 2px 2px rgba(0, 0, 0, 0.2),2px -2px 2px rgba(0, 0, 0, 0.2);}
+/*设置的下拉菜单*/
 
 img {/*图片*/
 display: block;
 margin-left: auto;
 margin-right: auto;
 }
-
-div {
-border: 5px solid green;
+/*搜索栏*/
+input.text {
 position: relative;
-height: 40%;
-margin: 0;
+margin: 0 30px;
+width: 80%;
+padding: 10px;
+box-sizing: border-box;
+border-radius: 8px;
+border: 2px solid grey;
 }
+
+div.headwrapped {
+position: relative;
+height: 314px;
+width: 654px;
+margin: auto;
+padding: 0;
+}
+/*搜索按钮*/
+.button {
+box-sizing: border-box;
+border-radius: 8px;
+background-color:rgba(64, 76, 255, 0.8);
+color: white;
+border: none;
+padding:10px;
+margin: -35px;
+text-align: center;
+text-decoration: none;
+font-size: 16px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+.button:hover {
+background-color:rgba(64, 76, 255, 1);
+}
+/*页脚设置*/
+footer{
+font-size:0.7em;
+position: fixed;
+bottom:0;
+left:0;
+width:100%;
+height: 30px;
+margin:0;
+clear:both;
+color:grey;
+text-align:center;
+cursor:pointer;
 }
 </style>
 </head>
 
 <body>
 
-
-
-
-<div>
 <ul>
 <li class="lefttop"><a href="#">新闻</a></li>
 <li class="lefttop"><a href="#">hao123</a></li>
@@ -55,16 +141,36 @@ margin: 0;
 <li class="lefttop"><a href="#">网盘</a></li>
 <li class="lefttop"><a href="#">文库</a></li>
 <li class="lefttop"><a href="#">更多</a></li>
-<li style=""><a style="display:block;color:blue;" href="#">登录</a></li>
-<li style=""><a href="#">设置</a></li>
+<li style="float:right"><a style="display:block;color:white;background:blue;border-radius: 8px;padding:8px;margin:4px;" href="#">登录</a></li>
+<li style="float:right" class="dropdown">
+<a href="javascript:void(0)" class="droptn">设置</a>
+<div class="dropdown-content">
+<a href="#">搜索设置</a>
+<a href="#">高级搜索</a>
+<a href="#">关闭检测</a>
+<a href="#">隐私设置</a>
+<a href="#">关闭热搜</a>
+</div>
+</li>
 </ul>
 
 <div style="clear:left"></div>
+<div class="headwrapped">
 <img src="baidu logo.png" width="270" height="129">
-
-
+<form>
+<input class="text" type="search" name="baidusearch">
+<input type="button" class="button" value="百度一下">
+</form>
 </div>
 
-
+<footer>
+<ul>
+<li class="bottom"><a href="#" class="bt">关于百度</a></li>
+<li class="bottom"><a href="#" class="bt">About Baidu</a></li>
+<li class="bottom"><a href="#" class="bt">使用百度前必读</a></li>
+<li class="bottom"><a href="#" class="bt">帮助中心</a></li>
+<li class="bottom"><a href="#" class="bt">企业推广</a></li>
+</ul>
+</footer>
 </body>
 </html>
